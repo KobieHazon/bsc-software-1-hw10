@@ -34,7 +34,7 @@ public class TriviaGUI {
 	private LoadedQuestion curQuestion;
 	private SaveWheel passListener;
 	private SaveWheel fiftyListener;
-	
+
 	// Currently visible UI elements.
 	Label instructionLabel;
 	Label questionLabel;
@@ -45,7 +45,7 @@ public class TriviaGUI {
 	private int score;
 	private int numQues;
 	private int wrongQues;
-	
+
 	public void open() {
 		createShell();
 		runApplication();
@@ -105,9 +105,9 @@ public class TriviaGUI {
 			public void widgetSelected(SelectionEvent arg0) {
 				filePathField.setText(GUIUtils.getFilePathFromFileDialog(shell));
 			}
-			
+
 		});
-		
+
 		// "Play!" button
 		final Button playButton = new Button(fileSelection, SWT.PUSH);
 		playButton.setText("Play!");
@@ -116,7 +116,7 @@ public class TriviaGUI {
 			@Override
 			public void widgetDefaultSelected(SelectionEvent arg0) {
 				// Do Nothing
-				
+
 			}
 
 			@Override
@@ -130,7 +130,7 @@ public class TriviaGUI {
 				scoreLabel.setText(String.valueOf(score));
 				updateQuestionPanel(curQuestion.getQuestion(), curQuestion.getRandomAnswers());
 			}
-			
+
 		});
 	}
 
@@ -205,7 +205,7 @@ public class TriviaGUI {
 			answerListeners.add(tmp);
 			answerButtons.add(answerButton);
 		}
-		
+
 
 		// create the "Pass" button to skip a question
 		passButton = new Button(questionPanel, SWT.PUSH);
@@ -217,7 +217,7 @@ public class TriviaGUI {
 		passButton.addSelectionListener(passListener);
 		if (passListener.used && score <= 0)
 			passButton.setEnabled(false);
-		
+
 		// create the "50-50" button to show fewer answer options
 		fiftyFiftyButton = new Button(questionPanel, SWT.PUSH);
 		fiftyFiftyButton.setText("50-50");
@@ -228,12 +228,12 @@ public class TriviaGUI {
 		fiftyFiftyButton.addSelectionListener(fiftyListener);
 		if (fiftyListener.used && score <= 0)
 			fiftyFiftyButton.setEnabled(false);
-		
+
 		// two operations to make the new widgets display properly
 		questionPanel.pack();
 		questionPanel.getParent().layout();
 	}
-	
+
 	private void GameOver() {
 		for (int i = 0; i < 4; i++) {
 			this.answerButtons.get(i).setEnabled(false);
@@ -245,7 +245,7 @@ public class TriviaGUI {
 	private void UpdateScore() {
 		scoreLabel.setText(String.valueOf(score));
 	}
-	
+
 	/**
 	 * Opens the main window and executes the event loop of the application
 	 */
@@ -259,12 +259,12 @@ public class TriviaGUI {
 		display.dispose();
 		boldFont.dispose();
 	}
-	
+
 	public class SaveWheel implements SelectionListener {
-		
+
 		private boolean used;
 		private boolean isPass;
-		
+
 		public SaveWheel(String s) {
 			if (s.equals("Pass"))
 				isPass = true;
@@ -272,7 +272,7 @@ public class TriviaGUI {
 				isPass = false;
 			used = false;
 		}
-		
+
 		@Override
 		public void widgetDefaultSelected(SelectionEvent arg0) {
 			// TODO Auto-generated method stub
@@ -307,12 +307,12 @@ public class TriviaGUI {
 					tmp.get(1).setEnabled(false);
 				}
 			}
-			
-			
+
+
 		}
-		
+
 	}
-	
+
 	public class answerListener implements SelectionListener {
 		private Button button;
 		public answerListener(Button button) {
@@ -321,7 +321,7 @@ public class TriviaGUI {
 		@Override
 		public void widgetDefaultSelected(SelectionEvent arg0) {
 			// TODO Auto-generated method stub
-			
+
 		}
 		@Override
 		public void widgetSelected(SelectionEvent arg0) {

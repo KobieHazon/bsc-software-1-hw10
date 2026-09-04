@@ -7,7 +7,7 @@ enum TLight {
 			   return GREEN;
 		   }
 	   },
-	   
+
 	   AMBER(10){
 		   public TLight next() {
 			   return RED;
@@ -18,23 +18,23 @@ enum TLight {
 			   return AMBER;
 		   }
 	   };
-	 
-	   
+
+
 	   private final int seconds;     // Private variable
-	 
+
 	   TLight(int seconds) {          // Constructor
 	      this.seconds = seconds;
 	   }
-	 
+
 	   int getSeconds() {             // Getter
 	      return seconds;
-	   }  
-	   
+	   }
+
 	   public TLight next() {
 		   return this.next();
 	   }
 	}
-	   
+
 	public class TLightTest {
 	   public static void main(String[] args) {
 	      for (TLight light : TLight.values()) {

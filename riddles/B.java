@@ -1,7 +1,7 @@
 package riddles;
 
 public class B extends A{
-	
+
 	protected int i;
 	protected int j;
 

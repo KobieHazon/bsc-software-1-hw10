@@ -10,7 +10,7 @@ public class GUIUtils {
 
 	/**
 	 * open a dialog with information to the user.
-	 * 
+	 *
 	 * @param shell
 	 * @param title
 	 *            of the dialog
@@ -24,7 +24,7 @@ public class GUIUtils {
 
 	/**
 	 * open a dialog with an error message to the user.
-	 * 
+	 *
 	 * @param shell
 	 * @param message
 	 *            to display
@@ -35,7 +35,7 @@ public class GUIUtils {
 
 	/**
 	 * Opens a message dialog
-	 * 
+	 *
 	 * @param shell
 	 *            - the parent window
 	 * @param title
@@ -52,7 +52,7 @@ public class GUIUtils {
 		messageBox.setMessage(message);
 		messageBox.open();
 	}
-	
+
 	/**
 	 * Opens a file selection dialog
 	 * @param shell

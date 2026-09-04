@@ -2,7 +2,7 @@ package riddles;
 
 
 public class A implements Comparable<A> {
-	
+
 	protected int i;
 	protected int j;
 
@@ -46,8 +46,8 @@ public class A implements Comparable<A> {
 			}
 		}
 	}
-	
-	
+
+
 	public String toString() {return "("+this.i+" "+this.j+")";}
 
 
