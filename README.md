@@ -7,8 +7,8 @@ A historical archive of my CS BSc coursework.
 This homework contains a Java trivia application and riddle exercises:
 
 - `il.ac.tau.cs.sw1.trivia` - trivia question loading, loaded-question model, and SWT GUI source.
-- `riddles` - equality, hashing, comparison, and collection-behavior exercises.
-- `enumRiddles` - enum state-transition exercises.
+- `src/riddles` - equality, hashing, comparison, and collection-behavior exercises.
+- `src/enumRiddles` - enum state-transition exercises.
 - `resources/trivia/trivia.txt` - recovered trivia data file, moved from the submission root into a resource folder.
 
 ## Provenance
@@ -44,3 +44,13 @@ The GUI depends on SWT. When an SWT JAR is available locally:
 ```bash
 make compile-swt SWT_JAR=/path/to/swt.jar
 ```
+
+## Repository layout
+
+- `src/`: Java source packages (`il/`, `riddles/`, and `enumRiddles/`), preserving their package names.
+- `resources/`: supplied trivia data.
+- `tests/`: focused automated checks.
+- `assignment/`: recovered assignment/provenance context.
+- `build/`: ignored compiler output.
+
+The root-level `make test` and `make compile-swt SWT_JAR=...` commands use the new source root. No package names or algorithms changed.

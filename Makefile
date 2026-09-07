@@ -1,8 +1,8 @@
 JAVAC ?= javac
 JAVA ?= java
 BUILD_DIR := build
-CORE_SOURCES := $(shell find il riddles enumRiddles tests -name '*.java' ! -name 'TriviaGUI.java' ! -name 'GUIUtils.java' ! -name 'TriviaMain.java')
-GUI_SOURCES := $(shell find il riddles enumRiddles -name '*.java')
+CORE_SOURCES := $(shell find src tests -name '*.java' ! -name 'TriviaGUI.java' ! -name 'GUIUtils.java' ! -name 'TriviaMain.java')
+GUI_SOURCES := $(shell find src -name '*.java')
 
 .PHONY: compile compile-swt test clean
 
